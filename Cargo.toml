@@ -1,5 +1,5 @@
 [package]
-name = "spacecraft_server_dojo"
+name = "stellar-bit-server-template"
 version = "0.1.0"
 edition = "2021"
 
