@@ -1,6 +1,5 @@
 use futures::prelude::sink::SinkExt;
-use rand_chacha::{rand_core::SeedableRng, ChaChaRng};
-use std::{convert::Infallible, sync::Arc};
+use std::sync::Arc;
 use stellar_bit_core::prelude::*;
 use stellar_bit_core::{
     game::GameCmdExecutionError,
@@ -32,7 +31,7 @@ impl GameSession {
             game: Arc::new(RwLock::new(Game::new())),
         }
     }
-    pub fn game_loop(mut self, fps: u32) -> Result<(), GameCmdExecutionError> {
+    pub fn game_loop(self, fps: u32) -> Result<(), GameCmdExecutionError> {
         let target_duration = std::time::Duration::from_secs_f32(1. / fps as f32);
 
         loop {

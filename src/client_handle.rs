@@ -132,11 +132,11 @@ impl ClientHandle {
         self.ws_stream
             .feed(Message::Binary(msg_raw))
             .await
-            .map_err(|e| NetworkError::WebsocketTrouble)?;
+            .map_err(|_| NetworkError::WebsocketTrouble)?;
         self.ws_stream
             .flush()
             .await
-            .map_err(|e| NetworkError::WebsocketTrouble)
+            .map_err(|_| NetworkError::WebsocketTrouble)
     }
 
     pub async fn receive_msg(&mut self) -> Option<Result<ClientRequest, NetworkError>> {
