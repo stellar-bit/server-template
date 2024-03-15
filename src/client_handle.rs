@@ -52,7 +52,6 @@ impl ClientHandle {
         match msg {
             ClientRequest::Join(public_token, _private_token) => {
                 self.user = User::Spectator;
-                // todo verify validity of private and public token on server
 
                 let mut game = self.game.write().unwrap();
 

@@ -9,5 +9,5 @@ edition = "2021"
 stellar-bit-core = { git="https://github.com/stellar-bit/core" }
 futures = "0.3"
 tokio = { version = "1.28", features = ["rt-multi-thread", "macros"] }
-tokio-tungstenite = "0.19"
+tokio-tungstenite = "0.21"
 rand_chacha = { version = "0.3.1", features = ["serde", "serde1"] }
